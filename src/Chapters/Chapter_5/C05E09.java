@@ -26,9 +26,9 @@ public class C05E09 {
                 secondMaxName = name;
             }
         }
-        System.out.println("The student with the highest score is " + maxName);
+        System.out.println("The Student with the highest score is " + maxName);
         System.out.println("The highest score is " + max);
-        System.out.println("The student with the second highest score is " + secondMaxName);
+        System.out.println("The Student with the second highest score is " + secondMaxName);
         System.out.println("The second highest score is " + secondMax);
     }
 }
