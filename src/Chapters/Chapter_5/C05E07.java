@@ -6,7 +6,7 @@ public class C05E07 {
         int totalFee = 0;
 
         for (int i = 1; i <= 14; i++) {
-            feePerYear += feePerYear * .05;
+            feePerYear += feePerYear * 0.05;
             if (i == 10) {
                 System.out.println("The tuition fee in ten year is $" + feePerYear);
             }
