@@ -3,7 +3,8 @@ package Chapters.Chapter_6;
 public class C06E26 {
     public static void main(String[] args) {
         final int NUMBER_OF_PALINPRIME = 100;
-        int numberPrinted = 0, testedNumber = 2;
+        int numberPrinted = 0;
+        int testedNumber = 2;
 
         while (numberPrinted < NUMBER_OF_PALINPRIME) {
             if (isPrime(testedNumber) && isPalindrome(testedNumber)) {
