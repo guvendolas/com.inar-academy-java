@@ -5,32 +5,43 @@ import java.util.Scanner;
 public class C07E34 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter a string: ");
-        String string = input.nextLine();
-        System.out.println(sort(string));
+        System.out.print("Enter a string :");
+        String s1 = input.nextLine();
+
+        System.out.println(s1);
+
+        s1 = sort(s1);
+
+        System.out.println(s1);
     }
 
-    public static char[] sort(String s) {
-        char[] str = new char[s.length()];
+    public static String sort(String s) {
+        char[] charArray = new char[s.length()];
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = s.charAt(i);
+        }
+        // charArray = { 's' , 'i' , 'n', 'a', 'n'};
 
-        for (int i = 0; i < str.length; i++)
-            str[i] = s.charAt(i);
+        charArray = sort(charArray);
+        String result = "";
+        for (int i = 0; i < charArray.length; i++) {
+            result += charArray[i];
+        }
 
-        for (int i = 0; i < str.length - 1; i++) {
-            char min = str[i];
-            int minIndex = i;
+        return result;
+    }
 
-            for (int j = i + 1; j < str.length; j++) {
-                if (min > str[j]) {
-                    min = str[j];
-                    minIndex = j;
+    public static char[] sort(char[] array) {
+        // a b c d e f g
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    char temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
                 }
             }
-            if (minIndex != i) {
-                str[minIndex] = str[i];
-                str[i] =  min;
-            }
         }
-        return str;
+        return array;
     }
 }
