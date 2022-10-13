@@ -8,7 +8,7 @@ public class C08E01 {
         double [][] print = getPrint();
 
         for (int i = 0; i < print[0].length; i++) {
-            System.out.println("sum of elements at column " + i + " is " + sumColumn(print,i));
+            System.out.println("sum of elements at column " + (i + 1) + " is " + sumColumn(print,i));
         }
 
     }
