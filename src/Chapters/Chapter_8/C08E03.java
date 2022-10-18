@@ -16,9 +16,7 @@ public class C08E03 {
 
         int[][] correctCounts = new int[answers.length][2];
 
-        // Grade all answers
         for (int i = 0; i < answers.length; i++) {
-            // Grade one student
             for (int j = 0; j < answers[i].length; j++) {
                 if (answers[i][j] == keys[j]) {
                     correctCounts[i][0] = i;
