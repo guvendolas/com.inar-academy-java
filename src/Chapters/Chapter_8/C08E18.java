@@ -16,14 +16,12 @@ public class C08E18 {
     }
     public static void shufflingArray (int[][] matrix) {
         for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                int row1 = (int)(Math.random() * matrix.length);
-                int col1 = (int)(Math.random() * matrix[row].length);
+            int random = (int)(Math.random() * matrix.length);
 
-                int temp = matrix[row][col];
-                matrix[row][col] = matrix[row1][col1];
-                matrix[row1][col1] = temp;
+            int temp = matrix[row][0];
+            matrix[row][0] = matrix[random][0];
+            matrix[random][0] = temp;
             }
         }
     }
-}
+
