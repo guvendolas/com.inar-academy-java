@@ -13,6 +13,7 @@ public class C08E25 {
     }
 
     public static boolean isMarkovMatrix(double[][] m) {
+
         return isElementsPositive(m) && isEachColumnSum1(m);
     }
 
