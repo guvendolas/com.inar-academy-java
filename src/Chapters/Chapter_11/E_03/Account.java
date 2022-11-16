@@ -7,6 +7,9 @@ public class Account {
     private double balance;
     private double annualInterestRate;
     private Date dateCreate;
+    public Account (){
+        super();
+    }
 
     public Account(int id, double balance) {
         this(0, 0, 0, new Date());
