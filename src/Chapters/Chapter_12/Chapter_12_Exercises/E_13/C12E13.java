@@ -4,44 +4,47 @@ import java.io.File;
 import java.util.Scanner;
 
 public class C12E13 {
-    public static void main(String[] args) throws Exception {
-        if (args.length != 1) {
-            System.out.println("Usage: java filename");
+    public static void main(String[] args) throws Exception{
+
+        if(args.length != 1){
+            System.out.println("Wrong usage : Takes one argument and its file name ");
             System.exit(1);
         }
-
         File file = new File(args[0]);
-        if (!file.exists()) {
-            System.out.println("File " + args[0] + " does not exist");
+
+        if(!file.exists()){
+            System.out.println("There is no such file ");
             System.exit(2);
         }
+        String str ="";
+        int wordCount = 0;
+        int lineCount = 0;
+        int charCount = 0;
 
-        int characters = 0;
-        int words = 0;
-        int lines = 0;
-
-        try (
+        try(
                 Scanner input = new Scanner(file);
-        ) {
-            while (input.hasNext()) {
-                lines++;
-                String line = input.nextLine();
-                characters += line.length();
+        ){
+            while(input.hasNext()){
+                str = input.nextLine();
+                lineCount++;
+                charCount += countChars(str);
+                wordCount += countWords(str);
             }
         }
+        System.out.println("Number of lines : " + lineCount + "\n Number of chars : " + charCount + "\n Number of words : " + wordCount);
 
-        try (
-                Scanner input = new Scanner(file);
-        ) {
-            while (input.hasNext()) {
-                String line = input.next();
-                words++;
+    }
+    public static int countChars(String str){
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) != ' '){
+                count++;
             }
         }
-
-        System.out.println("File " + file.getName() + " has");
-        System.out.println(characters + " characters");
-        System.out.println(words + " words");
-        System.out.println(lines + " lines");
+        return count;
+    }
+    public static int countWords(String str){
+        String[] array = str.split(" ");
+        return array.length;
     }
 }
